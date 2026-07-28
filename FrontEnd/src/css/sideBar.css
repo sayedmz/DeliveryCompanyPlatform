@@ -1,0 +1,124 @@
+/* ========= Sidebar ========= */
+.sidebar {
+  height: calc(
+    100vh - 94px
+  ); /* ارتفاع الشاشة ناقص ارتفاع الـ Navbar + الهوامش */
+  position: sticky;
+  top: 94px; /* يثبت تحت الـ Navbar */
+  width: 100%;
+  background: linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.6),
+      rgba(15, 23, 42, 0.75)
+    ),
+    radial-gradient(
+      800px 400px at 20% 0%,
+      rgba(96, 165, 250, 0.12),
+      transparent 60%
+    ),
+    var(--panel);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  backdrop-filter: blur(8px);
+  overflow: auto;
+}
+
+.sidebar-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin: 6px 6px 12px;
+  opacity: 0.9;
+}
+
+/* قائمة الروابط */
+.sidebar-links {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.sidebar-links li {
+  width: 100%;
+}
+
+/* روابط عامة (Link/NavLink) */
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #dbeafe;
+  text-decoration: none;
+  transition: transform 0.12s ease, background 0.18s ease, box-shadow 0.2s ease,
+    color 0.2s ease;
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 41, 59, 0.35),
+    rgba(15, 23, 42, 0.35)
+  );
+}
+
+/* Hover لطيف */
+.sidebar-links a:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(99, 102, 241, 0.2),
+    rgba(56, 189, 248, 0.15)
+  );
+  transform: translateX(4px);
+  box-shadow: 0 6px 16px rgba(23, 37, 84, 0.35);
+}
+
+/* الحالة النشطة مع NavLink (.active) */
+.sidebar-links a.active {
+  background: linear-gradient(
+      180deg,
+      rgba(99, 102, 241, 0.28),
+      rgba(56, 189, 248, 0.22)
+    ),
+    linear-gradient(180deg, rgba(30, 41, 59, 0.45), rgba(15, 23, 42, 0.45));
+  color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 10px 24px rgba(30, 64, 175, 0.45);
+}
+
+/* تذبذب خفيف للأكتف */
+@keyframes pulseActive {
+  0% {
+    box-shadow: 0 10px 24px rgba(30, 64, 175, 0.45);
+  }
+  50% {
+    box-shadow: 0 10px 28px rgba(30, 64, 175, 0.55);
+  }
+  100% {
+    box-shadow: 0 10px 24px rgba(30, 64, 175, 0.45);
+  }
+}
+.sidebar-links a.active {
+  animation: pulseActive 2.2s ease-in-out infinite;
+}
+
+/* Responsive تحسينات */
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 12px;
+  }
+  .sidebar-links {
+    gap: 4px;
+    padding: 6px;
+  }
+  .sidebar-links a {
+    padding: 9px 10px;
+    border-radius: 10px;
+  }
+}

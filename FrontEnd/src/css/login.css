@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* خلفية متدرجة بنفس ألوان الـ Dashboard */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #0b1220, #0f172a, #1e293b);
+  background-size: 400% 400%;
+  animation: backgroundAnimation 12s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* كارت تسجيل الدخول */
+.login-form {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  padding: 35px 28px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(12px);
+  color: #e2e8f0;
+  animation: slideIn 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+/* الحقول */
+.login-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  font-size: 1rem;
+  transition: outline 0.2s ease;
+}
+
+.login-form input:focus {
+  outline: 2px solid #60a5fa;
+}
+
+/* الزر */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #60a5fa, #22d3ee, #a78bfa);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.3s ease;
+}
+
+.login-form button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .login-form {
+    padding: 25px 18px;
+  }
+  .login-form h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* select role */
+.login-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    outline 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* عند التركيز */
+.login-form select:focus {
+  outline: 2px solid #60a5fa;
+}

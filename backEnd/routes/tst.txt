@@ -1,0 +1,28 @@
+token and connected back with front
+2eme update data base 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=delivery
+DB_USERNAME=root
+DB_PASSWORD=
+/////////////////////
+3eme model user
+///////////////
+4eme 
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+//////////////////
+5eme test route api in api.php and web.php
+ tnzem route api.php 
+ ///////////////////
+ 6eme 
+ bootstrap/app.php 
+ ////////////////
+ 7eme  routeServiceProvider in provider
+ /////////
+ 8eme cache app.php
+ /////////
+ 9eme auth.php gurad
+ ///////////
