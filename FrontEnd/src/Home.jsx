@@ -4,11 +4,11 @@ import "./css/home.css";
 
 // رقم تجريبي: استبدله لاحقًا برقم الشركة من دون + أو مسافات
 
-const WHATSAPP_NUMBER = "96170123456";
+const WHATSAPP_NUMBER = "96170542232";
 
 export default function Home() {
   const whatsappMessage = encodeURIComponent(
-    "مرحباً درب الجنوب، بدي استفسر عن خدمة التوصيل.",
+    "مرحباً دليفيري الجنوب، بدي استفسر عن خدمة التوصيل.",
   );
 
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
@@ -22,7 +22,7 @@ export default function Home() {
             <span className="south-logo">د</span>
 
             <span className="south-brand-text">
-              <strong>درب الجنوب</strong>
+              <strong>دليفيري الجنوب</strong>
               <small>خدمة توصيل</small>
             </span>
           </Link>
@@ -30,10 +30,6 @@ export default function Home() {
           <nav className="south-auth" aria-label="روابط الحساب">
             <Link className="south-login" to="/login">
               تسجيل الدخول
-            </Link>
-
-            <Link className="south-register" to="/register">
-              إنشاء حساب
             </Link>
           </nav>
         </div>
@@ -68,10 +64,6 @@ export default function Home() {
                   </span>
                   تواصل معنا على واتساب
                 </a>
-
-                <Link className="south-secondary-button" to="/register">
-                  إنشاء حساب
-                </Link>
               </div>
 
               <a
@@ -79,9 +71,7 @@ export default function Home() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
-              >
-                واتساب: +961 70 123 456
-              </a>
+              ></a>
 
               <div className="south-benefits">
                 <span>أسعار مناسبة</span>
@@ -96,7 +86,7 @@ export default function Home() {
                 <div className="delivery-card-top">
                   <span className="delivery-status">جاري التوصيل</span>
 
-                  <span className="delivery-number">#1024</span>
+                  <span className="delivery-number">#70542232</span>
                 </div>
 
                 <div className="delivery-package">
@@ -109,7 +99,6 @@ export default function Home() {
 
                     <div>
                       <small>الاستلام</small>
-                      <strong>صور</strong>
                     </div>
                   </div>
 
@@ -120,14 +109,13 @@ export default function Home() {
 
                     <div>
                       <small>التوصيل</small>
-                      <strong>النبطية</strong>
                     </div>
                   </div>
                 </div>
 
                 <div className="delivery-footer">
                   <span>توصيل آمن وسريع</span>
-                  <strong>درب الجنوب</strong>
+                  <strong>دليفيري الجنوب</strong>
                 </div>
               </div>
 
@@ -197,18 +185,16 @@ export default function Home() {
             <span className="south-logo small">د</span>
 
             <span>
-              <strong>درب الجنوب</strong>
+              <strong>دليفيري الجنوب</strong>
               <small>طلباتك بتوصل معنا</small>
             </span>
           </div>
 
           <div className="south-footer-links">
             <Link to="/login">تسجيل الدخول</Link>
-
-            <Link to="/register">إنشاء حساب</Link>
           </div>
 
-          <p>© {new Date().getFullYear()} درب الجنوب</p>
+          <p>© {new Date().getFullYear()} دليفيري الجنوب</p>
         </div>
       </footer>
     </div>
