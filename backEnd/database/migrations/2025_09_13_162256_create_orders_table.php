@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id("orderID");
-            $table->foreignId("driverId")->constrained("users")->references("userId");
+            $table->foreignId("driverId");
+
+            $table->foreign("driverId")
+                ->references("userID")
+                ->on("users");
+           
             $table->string("orderName" , length:25);
             $table->string("orderAddress" , length:200);
             $table->string("customerName" , length:50);
