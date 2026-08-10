@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id("driverId");
-            $table->foreignId("userId")->constrained("users")->references("userId");
+            $table->foreignId("userId")->constrained("users")->references("userID");
             $table->timestamps();
         });
     }
