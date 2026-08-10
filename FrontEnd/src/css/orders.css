@@ -1,18 +1,33 @@
+/* =========================================================
+   MOBILE LIST
+========================================================= */
+
+.mobile-orders-list {
+  display: none;
+}
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
 .orders-wrap {
   padding: 16px;
 }
+
 .orders-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
+
 .orders-actions {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
 }
+
 .orders-search {
   padding: 10px 12px;
   border-radius: 10px;
@@ -20,18 +35,28 @@
   min-width: 280px;
 }
 
+/* =========================================================
+   PILLS
+========================================================= */
+
 .pill {
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid #ddd;
   font-size: 12px;
 }
+
 .pill-ok {
   border-color: #bde5c8;
 }
+
 .pill-warn {
   border-color: #f3d2a3;
 }
+
+/* =========================================================
+   SUMMARY
+========================================================= */
 
 .orders-summary {
   display: grid;
@@ -39,139 +64,185 @@
   gap: 12px;
   margin: 14px 0;
 }
+
 .summary-card {
   border: 1px solid #e6e6e6;
   border-radius: 14px;
   padding: 12px;
   background: #000000;
 }
+
 .summary-title {
   font-weight: 700;
   margin-bottom: 6px;
 }
+
 .summary-value {
   font-size: 22px;
   font-weight: 800;
   margin-bottom: 6px;
 }
+
 .summary-sub {
   font-size: 12px;
   opacity: 0.75;
 }
+
 .small-note {
   font-size: 12px;
   opacity: 0.8;
   margin-top: 8px;
 }
 
+/* =========================================================
+   DRIVER SUMMARY
+========================================================= */
+
 .driver-sums {
   list-style: none;
   padding: 0;
   margin: 10px 0 0;
+
   display: grid;
   gap: 8px;
 }
+
 .driver-sums li {
   display: flex;
   justify-content: space-between;
+
   border: 1px dashed #e6e6e6;
+
   padding: 8px 10px;
+
   border-radius: 12px;
 }
+
 .driver-name {
   font-weight: 600;
 }
+
 .driver-sum {
   font-weight: 800;
 }
 
+/* =========================================================
+   DESKTOP TABLE
+========================================================= */
+
 .orders-card {
   border: 1px solid #e6e6e6;
   border-radius: 14px;
+
   overflow: hidden;
+
   background: #000000;
 }
+
 .orders-table {
   width: 100%;
   border-collapse: collapse;
 }
+
 .orders-table th,
 .orders-table td {
   padding: 10px;
+
   border-bottom: 1px solid #f0f0f0;
+
   text-align: left;
+
   font-size: 13px;
 }
+
 .orders-table thead th {
   background: #863636;
   font-weight: 700;
 }
 
-.row-delivered {
-  background: #000000;
-}
+/* =========================================================
+   DESKTOP STATUS ROWS
+========================================================= */
+
 .row-pending {
   background: #03b909;
 }
 
+.row-in_progress {
+  background: #d99a00;
+}
+
+.row-delivered {
+  background: #000000;
+}
+
+.row-cancelled {
+  background: #8b0000;
+}
+
+/* =========================================================
+   STATUS SELECT
+========================================================= */
+
+.status-select {
+  min-width: 120px;
+
+  padding: 7px 10px;
+
+  border-radius: 9px;
+
+  border: 1px solid #aaa;
+
+  background: #ffffff;
+  color: #111111;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.status-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
 .badge {
   padding: 4px 8px;
+
   border-radius: 999px;
+
   font-size: 12px;
+
   border: 1px solid #ddd;
 }
+
 .badge.delivered {
   border-color: #bde5c8;
 }
+
 .badge.pending {
   border-color: #f3d2a3;
 }
 
-.btn-deliver {
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  background: #7c1414;
-  cursor: pointer;
-}
-.btn-deliver.done {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-.empty {
-  text-align: center;
-  padding: 18px;
-  opacity: 0.75;
-}
-
-.state {
-  margin-top: 12px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-}
-.state.error {
-  border-color: #f0b4b4;
-}
-.state.note {
-  border-color: #ddd;
-}
-.full-width {
-  grid-column: 1 / -1;
-}
-
-.actions-cell {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .btn-delete {
   padding: 8px 10px;
+
   border-radius: 10px;
+
   border: 1px solid #ddd;
+
   background: #b91c1c;
+
   color: white;
+
   cursor: pointer;
 }
 
@@ -182,14 +253,354 @@
 
 .btn-delete-all {
   padding: 8px 12px;
+
   border-radius: 10px;
+
   border: 1px solid #ddd;
+
   background: #8b0000;
+
   color: white;
+
   cursor: pointer;
 }
 
 .btn-delete-all:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions-cell {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   STATES
+========================================================= */
+
+.empty {
+  text-align: center;
+
+  padding: 18px;
+
+  opacity: 0.75;
+}
+
+.state {
+  margin-top: 12px;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  border: 1px solid #ddd;
+}
+
+.state.error {
+  border-color: #f0b4b4;
+}
+
+.state.note {
+  border-color: #ddd;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   MOBILE / TABLET
+   <= 1350px
+========================================================= */
+
+@media (max-width: 1350px) {
+  .orders-wrap {
+    padding: 12px;
+  }
+
+  .orders-head {
+    display: block;
+  }
+
+  .orders-head h2 {
+    margin-bottom: 12px;
+  }
+
+  .orders-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .orders-search {
+    min-width: 0;
+
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .orders-summary {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide desktop table */
+  .orders-card {
+    display: none;
+  }
+
+  /* Show mobile cards */
+  .mobile-orders-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 15px;
+  }
+
+  /* =======================================================
+     MOBILE ORDER CARD
+  ======================================================= */
+
+  .mobile-order-item {
+    width: 100%;
+
+    min-height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    justify-content: space-between;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    color: inherit;
+  }
+
+  /* =======================================================
+     MOBILE ORDER MAIN
+  ======================================================= */
+
+  .mobile-order-main {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px 16px;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    box-sizing: border-box;
+  }
+
+  .mobile-order-main:active {
+    transform: scale(0.99);
+  }
+
+  /* =======================================================
+     MOBILE ORDER CONTENT
+  ======================================================= */
+
+  .mobile-order-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+  }
+
+  .mobile-driver-name {
+    font-size: 16px;
+
+    font-weight: 700;
+  }
+
+  .mobile-order-name {
+    font-size: 13px;
+
+    opacity: 0.85;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    max-width: 100%;
+  }
+
+  .mobile-order-arrow {
+    font-size: 22px;
+
+    opacity: 0.8;
+
+    margin-left: 12px;
+
+    flex-shrink: 0;
+  }
+
+  /* =======================================================
+     MOBILE ACTIONS
+  ======================================================= */
+
+  .mobile-order-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  .mobile-status-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+  }
+
+  .mobile-status-label {
+    font-size: 12px;
+
+    font-weight: 700;
+  }
+
+  /* =======================================================
+     MOBILE STATUS SELECT
+  ======================================================= */
+
+  .mobile-order-actions .status-select {
+    min-width: 125px;
+
+    padding: 7px 9px;
+
+    font-size: 12px;
+  }
+
+  /* =======================================================
+     MOBILE STATUS COLORS
+  ======================================================= */
+
+  .mobile-order-item.status-pending {
+    background: #03b909;
+
+    color: #ffffff;
+  }
+
+  .mobile-order-item.status-in_progress {
+    background: #d99a00;
+
+    color: #ffffff;
+  }
+
+  .mobile-order-item.status-delivered {
+    background: #176b35;
+
+    color: #ffffff;
+  }
+
+  .mobile-order-item.status-cancelled {
+    background: #8b0000;
+
+    color: #ffffff;
+  }
+
+  /* =======================================================
+     EMPTY
+  ======================================================= */
+
+  .mobile-orders-empty {
+    text-align: center;
+
+    padding: 20px;
+
+    opacity: 0.7;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 600px) {
+  .orders-wrap {
+    padding: 10px;
+  }
+
+  .mobile-order-main {
+    padding: 13px;
+  }
+
+  .mobile-driver-name {
+    font-size: 15px;
+  }
+
+  .mobile-order-name {
+    font-size: 12px;
+  }
+
+  .mobile-order-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .mobile-status-wrapper {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .mobile-order-actions .status-select {
+    flex: 1;
+
+    min-width: 0;
+  }
+
+  .mobile-order-actions .btn-delete {
+    width: 100%;
+  }
 }

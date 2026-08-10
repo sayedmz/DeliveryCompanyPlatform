@@ -1,0 +1,144 @@
+.order-details-page {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.order-details-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.order-details-header h2 {
+  margin: 0;
+}
+
+.order-back-button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  font-size: 15px;
+
+  padding: 8px;
+}
+
+.order-details-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+}
+
+.order-details-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.order-details-title span:first-child {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.order-details-title h3 {
+  margin: 5px 0 0;
+  font-size: 22px;
+}
+
+.order-status {
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  border: 1px solid #ddd;
+}
+
+.order-status.delivered {
+  border-color: #bde5c8;
+}
+
+.order-status.pending {
+  border-color: #f3d2a3;
+}
+
+.order-details-section {
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.order-details-section:last-child {
+  border-bottom: none;
+}
+
+.order-details-section h4 {
+  margin: 0 0 14px;
+
+  font-size: 16px;
+}
+
+.order-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding: 9px 0;
+}
+
+.order-info-row span {
+  opacity: 0.7;
+}
+
+.order-info-row strong {
+  text-align: right;
+  word-break: break-word;
+}
+
+.order-details-state {
+  padding: 20px;
+
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .order-details-page {
+    padding: 12px;
+  }
+
+  .order-details-header {
+    gap: 8px;
+  }
+
+  .order-details-header h2 {
+    font-size: 20px;
+  }
+
+  .order-details-title {
+    padding: 16px;
+  }
+
+  .order-details-section {
+    padding: 16px;
+  }
+
+  .order-info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .order-info-row strong {
+    text-align: left;
+  }
+}

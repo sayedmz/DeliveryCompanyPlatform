@@ -10,6 +10,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import Drivers from "./pages/Drivers";
 import Orders from "./pages/Orders";
 import AddOrders from "./pages/AddOrders";
+import OrderDetails from "./pages/OrderDetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="driver" element={<Drivers />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="orders/:orderID" element={<OrderDetails />} />
           <Route path="addOrder" element={<AddOrders />} />
         </Route>
       </Routes>

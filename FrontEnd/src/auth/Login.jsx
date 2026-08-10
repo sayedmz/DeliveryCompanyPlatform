@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../css/login.css";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [form, setForm] = useState({
@@ -9,8 +11,12 @@ function Login() {
   });
 
   const [error, setError] = useState(null);
-  const [user, setUser] = useState(null);
-  const [tokenPreview, setTokenPreview] = useState(null); // 👈 نعرض جزء فقط من التوكن
+
+  // const [user, setUser] = useState(null);
+  //const [tokenPreview, setTokenPreview] = useState(null); // 👈 نعرض جزء فقط من التوكن
+  const { user, setUser } = useAuth(); // 👈 استعمل الـContext لتخزين معلومات المستخدم
+
+  const nav = useNavigate(); // للانتقال بدون reflsh
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,10 +40,12 @@ function Login() {
         },
       );
 
-      const { user, token_preview } = response.data;
+      const { user } = response.data;
+      console.log(user);
       setUser(user);
-      setTokenPreview(token_preview);
-      window.location.href = "/dashboard";
+      // setTokenPreview(token_preview);
+      // window.location.href = "/dashboard";
+      nav("/dashboard");
       // alert("✅ Login successful!");
       // console.log("User:", user);
     } catch (err) {
@@ -87,8 +95,8 @@ function Login() {
           <p>
             Welcome <strong>{user.fName}</strong>!
           </p>
-          <p>Email: {user.email}</p>
-          <p>Token (preview): {tokenPreview}</p>
+          {/* <p>Email: {user.email}</p> */}
+          {/* <p>Token (preview): {tokenPreview}</p> */}
         </div>
       )}
     </div>

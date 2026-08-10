@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-// use App\Http\Middleware\UseSanctumTokenFromCookie;
+use App\Http\Middleware\UseSanctumTokenFromCookie;
 
 Route::post('/login', function (Request $request) {
     $request->validate([
@@ -82,47 +82,40 @@ Route::post("/register" , function(Request $request){
     ], 201)->cookie($cookie);
 });
 
-Route::get('/drivers', [UserController::class, 'drivers']);
-
-Route::post('/orders', [OrderController::class, 'store']);
-
-Route::get('/orders', [OrderController::class, 'index']);
-
-Route::patch('/orders/{orderID}', [OrderController::class, 'update']);
-
-Route::delete('/orders/{orderID}', [OrderController::class, 'destroy']);
-
-Route::delete('/orders', [OrderController::class, 'destroyAll']);
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return response()->json([
-        'user' => $request->user(),
-    ]);
-});
+  Route::get('/drivers', [UserController::class, 'drivers']);
 
 
+    Route::post('/orders', [OrderController::class, 'store']);
 
+    Route::get('/orders', [OrderController::class, 'index']);
 
+    Route::patch('/orders/{orderID}', [OrderController::class, 'update']);
+
+    Route::delete('/orders/{orderID}', [OrderController::class, 'destroy']);
+
+    Route::delete('/orders', [OrderController::class, 'destroyAll']);
 
 // Route::middleware([
 //     UseSanctumTokenFromCookie::class,
 //     'auth:sanctum',
 // ])->group(function () {
 
-//     Route::get('/user', function (Request $request) {
-//         return response()->json([
-//             'user' => $request->user(),
-//         ]);
-//     });
-
-//     Route::get('/drivers', [UserController::class, 'drivers']);
-
-//     Route::get('/orders', [OrderController::class, 'index']);
-//     Route::post('/orders', [OrderController::class, 'store']);
-//     Route::patch('/orders/{orderID}', [OrderController::class, 'update']);
-//     Route::delete('/orders/{orderID}', [OrderController::class, 'destroy']);
-//     Route::delete('/orders', [OrderController::class, 'destroyAll']);
+  
 // });
+
+
+
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return response()->json([
+//         'user' => $request->user(),
+//     ]);
+// });
+
+
+
+
+
 
 
 
