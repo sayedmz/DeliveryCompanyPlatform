@@ -3,9 +3,9 @@
 // import viteLogo from "/vite.svg";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Login from "./auth/login";
+import Login from "./auth/Login";
 import Register from "./auth/Register";
-import Home from "./home";
+import Home from "./Home";
 import Dashboard from "./Dashboard/Dashboard";
 import Drivers from "./pages/Drivers";
 import Orders from "./pages/Orders";
