@@ -10,7 +10,7 @@ function Register() {
     phone: "",
     email: "",
     password: "",
-    role: "",
+    // role: "",
   });
 
   const handleChange = (e) => {

@@ -62,7 +62,7 @@ Route::post("/register" , function(Request $request){
         'phone'=>'required | string  | min:8 |max:8' ,
         'email'=>'required | string  | unique:users,email' ,
         'password'=>'required | string  | min:6' ,
-        'role' => 'required|in:admin,user',
+        // 'role' => 'required|in:admin,user',
     ]);
 
     $user = User::create([
@@ -71,7 +71,9 @@ Route::post("/register" , function(Request $request){
         'phone' => $request->phone,
         'email' => $request->email,
         'password' => Hash::make($request->password),
-        'role' => $request->role,
+        'role' => 'user',
+        // 'role' => $request->role ?? 'user',
+        // 'role' => $request->role,
     ]);
     $token = $user->createToken('auth_token')->plainTextToken;
     //  $cookie = Cookie(
