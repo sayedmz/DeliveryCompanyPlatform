@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "../css/orders.css";
 
-const API_BASE = "http://localhost:8000/api";
+////////////////////////////////
+import { API_BASE } from "../api/api";
+
+// const API_BASE = "http://localhost:8000/api";
+////////////////////////////////////////
 
 const STATUS_OPTIONS = ["pending", "in_progress", "delivered", "cancelled"];
 

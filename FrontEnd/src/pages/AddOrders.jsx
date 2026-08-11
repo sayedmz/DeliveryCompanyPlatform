@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../css/addOrder.css";
+import { API_BASE } from "../api/api";
 
 function AddOrders() {
   const navigate = useNavigate();
@@ -28,7 +29,10 @@ function AddOrders() {
   useEffect(() => {
     const fetchDrivers = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/drivers", {
+        // const res = await axios.get("http://localhost:8000/api/drivers", {
+        //   withCredentials: true,
+        // });
+        const res = await axios.get(`${API_BASE}/drivers`, {
           withCredentials: true,
         });
         // console.log(res);
@@ -79,16 +83,22 @@ function AddOrders() {
         currency: form.currency,
       };
 
-      const res = await axios.post(
-        "http://localhost:8000/api/orders",
-        payload,
-        {
-          withCredentials: true,
-          headers: {
-            "Content-Type": "application/json",
-          },
+      // const res = await axios.post(
+      //   "http://localhost:8000/api/orders",
+      //   payload,
+      //   {
+      //     withCredentials: true,
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   },
+      // );
+      const res = await axios.post(`${API_BASE}/orders`, payload, {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+      });
 
       setSuccess("Order created successfully");
 

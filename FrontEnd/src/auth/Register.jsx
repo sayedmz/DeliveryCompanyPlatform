@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../css/login.css"; // نستعمل نفس التصميم
+import { API_BASE } from "../api/api";
 
 function Register() {
   const [form, setForm] = useState({
@@ -22,11 +23,17 @@ function Register() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8000/api/register", form, {
+      // const res = await axios.post("http://localhost:8000/api/register", form, {
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   withCredentials: true, // من اجل استلام توكن بال كوكي من باك
+      // });
+      const res = await axios.post(`${API_BASE}/register`, form, {
         headers: {
           "Content-Type": "application/json",
         },
-        withCredentials: true, // من اجل استلام توكن بال كوكي من باك
+        withCredentials: true,
       });
       console.log(res);
       window.location.href = "/dashboard";

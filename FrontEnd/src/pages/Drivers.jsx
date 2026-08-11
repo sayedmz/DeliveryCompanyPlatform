@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import "../css/driver.css";
 import axios from "axios";
+import { API_BASE } from "../api/api";
 
 function Drivers() {
   const [drivers, setDrivers] = useState([]);
@@ -12,7 +13,10 @@ function Drivers() {
   useEffect(() => {
     const fetchDrivers = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/drivers", {
+        // const res = await axios.get("http://localhost:8000/api/drivers", {
+        //   withCredentials: true,
+        // });
+        const res = await axios.get(`${API_BASE}/drivers`, {
           withCredentials: true,
         });
         // console.log("res" + res);
