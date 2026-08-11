@@ -25,17 +25,28 @@ Route::post('/login', function (Request $request) {
 
     $token = $user->createToken('auth_token')->plainTextToken;
     
-      $cookie = Cookie(
-        'auth_token',        // اسم الكوكي
-        $token,              // القيمة
-        60 * 24,             // المدة بالدقائق (هنا يوم)
-        '/',                 // المسار
-        null,                // الدومين (خليه null محليًا)
-        false,               // https فقط؟ false لأننا محليًا
-        true,                // HTTP Only = true
-        false,               // Raw
-        'Strict'             // SameSite
-    );
+    //   $cookie = Cookie(
+    //     'auth_token',        // اسم الكوكي
+    //     $token,              // القيمة
+    //     60 * 24,             // المدة بالدقائق (هنا يوم)
+    //     '/',                 // المسار
+    //     null,                // الدومين (خليه null محليًا)
+    //     false,               // https فقط؟ false لأننا محليًا
+    //     true,                // HTTP Only = true
+    //     false,               // Raw
+    //     'Strict'             // SameSite
+    // );
+    $cookie = Cookie(
+    'auth_token',
+    $token,
+    60 * 24,
+    '/',
+    null,
+    true,       // Secure
+    true,       // HttpOnly
+    false,      // Raw
+    'None'      // SameSite
+);
 
     return response()->json([
         'message' => 'Login successful',
@@ -63,17 +74,28 @@ Route::post("/register" , function(Request $request){
         'role' => $request->role,
     ]);
     $token = $user->createToken('auth_token')->plainTextToken;
-     $cookie = Cookie(
-        'auth_token',        // اسم الكوكي
-        $token,              // القيمة
-        60 * 24,             // المدة بالدقائق (هنا يوم)
-        '/',                 // المسار
-        null,                // الدومين (خليه null محليًا)
-        false,               // https فقط؟ false لأننا محليًا
-        true,                // HTTP Only = true
-        false,               // Raw
-        'Strict'             // SameSite
-    );
+    //  $cookie = Cookie(
+    //     'auth_token',        // اسم الكوكي
+    //     $token,              // القيمة
+    //     60 * 24,             // المدة بالدقائق (هنا يوم)
+    //     '/',                 // المسار
+    //     null,                // الدومين (خليه null محليًا)
+    //     false,               // https فقط؟ false لأننا محليًا
+    //     true,                // HTTP Only = true
+    //     false,               // Raw
+    //     'Strict'             // SameSite
+    // );
+    $cookie = Cookie(
+    'auth_token',
+    $token,
+    60 * 24,
+    '/',
+    null,
+    true,       // Secure
+    true,       // HttpOnly
+    false,      // Raw
+    'None'      // SameSite
+);
 
     return response()->json([
         // 'message'=>'user registered successfully',
