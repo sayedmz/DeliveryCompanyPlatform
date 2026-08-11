@@ -97,14 +97,14 @@ function Register() {
           required
           minLength="6"
         />
-        <label>Role</label>
+        {/* <label>Role</label>
         <select name="role" value={form.role} onChange={handleChange}>
           <option value="" disabled hidden>
             Select Role
           </option>
           <option value="admin">admin</option>
           <option value="user">user</option>
-        </select>
+        </select> */}
         {/* <input
           type="role"
           name="role"
