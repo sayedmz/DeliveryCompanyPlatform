@@ -119,6 +119,12 @@ Route::post("/register" , function(Request $request){
 
     Route::delete('/orders', [OrderController::class, 'destroyAll']);
 
+    Route::post('/logout', function (Request $request) {
+    return response()->json([
+        'message' => 'Logout successful',
+    ])->withCookie(Cookie::forget('auth_token'));
+});
+
 // Route::middleware([
 //     UseSanctumTokenFromCookie::class,
 //     'auth:sanctum',
