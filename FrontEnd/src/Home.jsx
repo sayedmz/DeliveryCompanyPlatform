@@ -2,13 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./css/home.css";
 
-// رقم تجريبي: استبدله لاحقًا برقم الشركة من دون + أو مسافات
-
 const WHATSAPP_NUMBER = "96170542232";
 
 export default function Home() {
   const whatsappMessage = encodeURIComponent(
-    "مرحباً دليفيري الجنوب، بدي استفسر عن خدمة التوصيل.",
+    "Hello, I would like to inquire about the delivery service.",
   );
 
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
