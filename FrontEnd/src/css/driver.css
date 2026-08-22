@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .drivers-head h2 {
@@ -52,8 +53,11 @@
   outline: none;
   background: rgba(255, 255, 255, 0.9);
   color: #0f172a;
-  transition: box-shadow 0.2s ease, transform 0.15s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
 }
+
 .drivers-search:focus {
   box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35);
   transform: translateY(-1px);
@@ -73,11 +77,13 @@
   padding: 10px 12px;
   border-radius: 10px;
 }
+
 .state.note {
   background: rgba(148, 163, 184, 0.08);
   border: 1px solid rgba(148, 163, 184, 0.15);
   color: var(--muted);
 }
+
 .state.error {
   background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.35);
@@ -97,12 +103,12 @@
   overflow: hidden;
 }
 
-/* جدول */
 .drivers-table {
   width: 100%;
   border-collapse: collapse;
   min-width: 720px;
 }
+
 .drivers-table thead th {
   text-align: left;
   font-weight: 600;
@@ -114,13 +120,16 @@
   position: sticky;
   top: 0;
 }
+
 .drivers-table tbody td {
   padding: 14px 16px;
   border-top: 1px solid rgba(148, 163, 184, 0.08);
 }
+
 .drivers-table tbody tr:hover {
   background: rgba(148, 163, 184, 0.06);
 }
+
 .drivers-table .email {
   color: #dbeafe;
   word-break: break-all;
@@ -134,6 +143,7 @@
   background: rgba(148, 163, 184, 0.12);
   color: var(--text);
 }
+
 .badge.user {
   border-color: rgba(96, 165, 250, 0.45);
   background: linear-gradient(
@@ -142,6 +152,7 @@
     rgba(167, 139, 250, 0.18)
   );
 }
+
 .badge.admin {
   border-color: rgba(234, 179, 8, 0.45);
   background: linear-gradient(
@@ -158,11 +169,206 @@
   padding: 28px 16px;
 }
 
+/* زر حذف السائق */
+.drivers-table button {
+  padding: 8px 12px;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(239, 68, 68, 0.2),
+    rgba(127, 29, 29, 0.2)
+  );
+  color: #fecaca;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.drivers-table button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(
+    180deg,
+    rgba(239, 68, 68, 0.32),
+    rgba(127, 29, 29, 0.3)
+  );
+  box-shadow: 0 8px 18px rgba(127, 29, 29, 0.28);
+}
+
 @media (max-width: 900px) {
-  .drivers-search {
-    min-width: 200px;
+  .drivers-head {
+    align-items: stretch;
+    flex-direction: column;
   }
+
+  .drivers-actions {
+    width: 100%;
+  }
+
+  .drivers-search {
+    min-width: 0;
+    width: 100%;
+  }
+
   .drivers-table {
     min-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .drivers-wrap {
+    gap: 12px;
+  }
+
+  .drivers-head {
+    gap: 10px;
+  }
+
+  .drivers-head h2 {
+    font-size: 1.1rem;
+  }
+
+  .drivers-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pill {
+    align-self: flex-start;
+  }
+
+  .drivers-card {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .drivers-table {
+    display: block;
+    min-width: 0;
+  }
+
+  .drivers-table thead {
+    display: none;
+  }
+
+  .drivers-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .drivers-table tbody tr {
+    display: block;
+    padding: 14px;
+    border: var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.92),
+      rgba(2, 6, 23, 0.92)
+    );
+    box-shadow: var(--shadow);
+  }
+
+  .drivers-table tbody tr:hover {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.92),
+      rgba(2, 6, 23, 0.92)
+    );
+  }
+
+  .drivers-table tbody td {
+    display: grid;
+    grid-template-columns: 95px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
+    text-align: left;
+  }
+
+  .drivers-table tbody td:first-child {
+    border-top: 0;
+  }
+
+  .drivers-table tbody td::before {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .drivers-table tbody td:nth-child(1)::before {
+    content: "ID";
+  }
+
+  .drivers-table tbody td:nth-child(2)::before {
+    content: "Name";
+  }
+
+  .drivers-table tbody td:nth-child(3)::before {
+    content: "Phone";
+  }
+
+  .drivers-table tbody td:nth-child(4)::before {
+    content: "Email";
+  }
+
+  .drivers-table tbody td:nth-child(5)::before {
+    content: "Role";
+  }
+
+  .drivers-table tbody td:nth-child(6)::before {
+    content: "Joined";
+  }
+
+  .drivers-table tbody td:nth-child(7)::before {
+    content: "Action";
+  }
+
+  .drivers-table .email {
+    word-break: break-word;
+  }
+
+  .drivers-table button {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  .empty {
+    display: block !important;
+    text-align: center !important;
+    padding: 22px 14px !important;
+  }
+
+  .empty::before {
+    content: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .drivers-table tbody tr {
+    padding: 12px;
+  }
+
+  .drivers-table tbody td {
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .drivers-table tbody td::before {
+    font-size: 0.72rem;
+  }
+
+  .drivers-search {
+    font-size: 0.9rem;
   }
 }

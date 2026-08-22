@@ -66,6 +66,28 @@ function Drivers() {
     return isNaN(d.getTime()) ? "-" : d.toLocaleDateString();
   };
 
+  const deleteDriver = async (userID) => {
+    const ok = window.confirm("Are you sure you want to delete this driver?");
+
+    if (!ok) return;
+
+    try {
+      await axios.delete(`${API_BASE}/drivers/${userID}`, {
+        withCredentials: true,
+      });
+
+      setDrivers((prev) => prev.filter((driver) => driver.userID !== userID));
+    } catch (e) {
+      console.error(
+        "DELETE_DRIVER_ERROR",
+        e?.response?.status,
+        e?.response?.data || e.message,
+      );
+
+      setErr(e?.response?.data?.message || "Failed to delete driver.");
+    }
+  };
+
   return (
     <div className="drivers-wrap">
       <div className="drivers-head">
@@ -95,6 +117,7 @@ function Drivers() {
                 <th>Email</th>
                 <th>Role</th>
                 <th>Joined</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -115,11 +138,19 @@ function Drivers() {
                       </span>
                     </td>
                     <td>{safeDate(u?.created_at)}</td>
+                    <td>
+                      <button
+                        type="button"
+                        onClick={() => deleteDriver(u.userID)}
+                      >
+                        Delete
+                      </button>
+                    </td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan="6" className="empty">
+                  <td colSpan="7" className="empty">
                     No results
                   </td>
                 </tr>

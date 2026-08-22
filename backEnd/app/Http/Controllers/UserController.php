@@ -33,4 +33,32 @@ class UserController extends Controller
             ], 500);
         }
     }
+
+    
+    public function destroy($userID)
+{
+    try {
+        $user = User::where('userID', $userID)
+            ->where('role', 'user')
+            ->first();
+
+        if (! $user) {
+            return response()->json([
+                'message' => 'Driver not found',
+            ], 404);
+        }
+
+        $user->delete();
+
+        return response()->json([
+            'message' => 'Driver deleted successfully',
+        ], 200);
+
+    } catch (\Throwable $e) {
+        return response()->json([
+            'message' => 'Failed to delete driver',
+            'error' => config('app.debug') ? $e->getMessage() : null,
+        ], 500);
+    }
+}
 }

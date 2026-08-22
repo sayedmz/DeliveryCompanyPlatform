@@ -106,7 +106,8 @@ Route::post("/register" , function(Request $request){
     ], 201)->cookie($cookie);
 });
 
-  Route::get('/drivers', [UserController::class, 'drivers']);
+    Route::get('/drivers', [UserController::class, 'drivers']);
+    Route::delete('/drivers/{userID}', [UserController::class, 'destroy']);
 
 
     Route::post('/orders', [OrderController::class, 'store']);
