@@ -146,9 +146,34 @@ const OrderDetails = () => {
             <strong>{order?.customerName ?? "-"}</strong>
           </div>
 
-          <div className="order-info-row">
+          {/* <div className="order-info-row">
             <span>Customer Phone</span>
             <strong>{order?.customerPhone ?? "-"}</strong>
+          </div> */}
+          <div className="order-info-row">
+            <span>Customer Phone</span>
+
+            <strong>
+              {order?.customerPhone ? (
+                <>
+                  <a href={`tel:${order.customerPhone}`}>
+                    {order.customerPhone}
+                  </a>
+
+                  {" | "}
+
+                  <a
+                    href={`https://wa.me/${order.customerPhone.replace(/\D/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>
+                </>
+              ) : (
+                "-"
+              )}
+            </strong>
           </div>
 
           <div className="order-info-row">

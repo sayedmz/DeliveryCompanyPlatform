@@ -32,10 +32,8 @@ class OrderController extends Controller
                 'orderName' => 'required|string|max:255',
                 'orderAddress' => 'required|string|max:255',
                 'customerName' => 'required|string|max:255',
-                'customerPhone' => [
-                    'required',
-                    'regex:/^(03|70|71|76|78|79|81|82|83|84|85|86|87|88|89)[0-9]{6}$/',
-                ],
+                'customerPhone' => 'required|string|max:25',
+                 // 'regex:/^(03|70|71|76|78|79|81|82|83|84|85|86|87|88|89)[0-9]{6}$/',
                 'totalPrice' => 'required|numeric|min:0',
                 'deliveryPrice' => 'required|numeric|min:0',
                 'status' => 'required|in:pending,in_progress,delivered,cancelled',
